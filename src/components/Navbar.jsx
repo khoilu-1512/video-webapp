@@ -9,13 +9,13 @@ const Navbar = () => {
     <Stack
       direction='horizontal'
       gap={2}
-      className='p-3 bg-dark border-bottom border-white d-flex justify-content-between align-items-center position-sticky top-0'
+      className='p-3 pe-0 bg-dark border-bottom border-white d-flex justify-content-between align-items-center position-sticky top-0'
     >
       <Link to='/' className='d-flex align-items-center'>
         <img src={videoLogo} alt='logo' height={45} />
-        <h4 className='m-2 text-white' style={{ fontWeight: '900' }}>
+        <h3 className='m-2 text-white' style={{ fontWeight: '900' }}>
           Vite React
-        </h4>
+        </h3>
       </Link>
       <SearchBar />
     </Stack>

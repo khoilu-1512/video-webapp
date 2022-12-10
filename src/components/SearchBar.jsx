@@ -20,7 +20,7 @@ const SearchBar = () => {
   return (
     <form
       onSubmit={handleOnSubmit}
-      className='d-flex shadow-none rounded-pill bg-white'
+      className='p-2 mx-4 d-flex shadow-none rounded-pill bg-white'
     >
       <input
         className='search-bar flex-shrink-1 flex-grow-1 rounded-pill rounded-end px-4'
