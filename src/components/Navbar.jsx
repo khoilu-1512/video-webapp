@@ -1,8 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { Button, Stack, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { Stack, Typography } from '@mui/material';
 
 import { SearchBar } from './';
-import { logo } from '../utils/constants';
 
 const Navbar = () => {
   return (
@@ -19,7 +18,7 @@ const Navbar = () => {
       }}
     >
       <Link to='/' style={{ display: 'flex', alignItems: 'center' }}>
-        <img src={logo} alt='logo' height={45} />
+        <img src='../assets/logo.png' alt='logo' height={45} />
         <Typography
           variant='h5'
           fontWeight={900}
