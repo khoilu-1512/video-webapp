@@ -16,13 +16,16 @@ const SearchFeed = () => {
   }, [searchTerm]);
 
   return (
-    <Box p={2} minHeight='95vh'>
-      <Typography variant='h4' fontWeight={900} color='#fff' mb={3}>
+    <div style={{ minHeight: '95vh' }} className='p-2'>
+      <h4
+        className='text-white p-4 pb-0 text-center'
+        style={{ fontWeight: '900' }}
+      >
         Search Results for{' '}
         <span style={{ color: '#FC1503' }}>{searchTerm}</span> videos
-      </Typography>
+      </h4>
       {<Videos videos={videos} />}
-    </Box>
+    </div>
   );
 };
 

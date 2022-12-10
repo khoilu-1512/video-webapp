@@ -1,24 +1,22 @@
 import React from 'react';
-import { Stack } from '@mui/material';
+import Stack from 'react-bootstrap/Stack';
+import { Button } from 'react-bootstrap';
 
 import { categories } from '../utils/constants';
 
 const Categories = ({ selectedCategory, setSelectedCategory }) => (
   <Stack
-    direction='row'
-    sx={{
+    style={{
       overflowY: 'auto',
-      height: { sx: 'auto', md: '95%' },
-      flexDirection: { md: 'column' },
     }}
+    className='d-flex flex-column'
   >
     {categories.map((category) => (
-      <button
-        className='category-btn'
+      <Button
+        className='category-btn text-white'
         onClick={() => setSelectedCategory(category.name)}
         style={{
           background: category.name === selectedCategory && '#FC1503',
-          color: '#fff',
         }}
         key={category.name}
       >
@@ -35,7 +33,7 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => (
         >
           {category.name}
         </span>
-      </button>
+      </Button>
     ))}
   </Stack>
 );

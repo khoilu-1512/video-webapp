@@ -1,34 +1,22 @@
 import { Link } from 'react-router-dom';
-import { Stack, Typography } from '@mui/material';
+import Stack from 'react-bootstrap/Stack';
 
 import { SearchBar } from './';
+import videoLogo from '../assets/logo.png';
 
 const Navbar = () => {
   return (
     <Stack
-      direction='row'
-      alignItems='center'
-      p={2}
-      sx={{
-        position: 'sticky',
-        background: '#000',
-        top: 0,
-        justifyContent: 'space-between',
-        borderBottom: '1px solid #fff',
-      }}
+      direction='horizontal'
+      gap={2}
+      className='p-3 bg-dark border-bottom border-white d-flex justify-content-between align-items-center position-sticky top-0'
     >
-      <Link to='/' style={{ display: 'flex', alignItems: 'center' }}>
-        <img src='../assets/logo.png' alt='logo' height={45} />
-        <Typography
-          variant='h5'
-          fontWeight={900}
-          color='#fff'
-          ml={{ md: '20px' }}
-        >
+      <Link to='/' className='d-flex align-items-center'>
+        <img src={videoLogo} alt='logo' height={45} />
+        <h4 className='m-2 text-white' style={{ fontWeight: '900' }}>
           Vite React
-        </Typography>
+        </h4>
       </Link>
-
       <SearchBar />
     </Stack>
   );

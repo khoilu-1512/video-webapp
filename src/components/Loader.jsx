@@ -1,12 +1,18 @@
 import React from 'react';
-import { Box, CircularProgress, Stack } from '@mui/material';
+import { Spinner, Stack } from 'react-bootstrap';
 
-const Loader = () =>  (
-  <Box minHeight="95vh">
-    <Stack direction='row' justifyContent='center' alignItems='center' height='80vh' >
-      <CircularProgress />
+const Loader = () => (
+  <div style={{ minHeight: '95vh' }}>
+    <Stack
+      direction='horizontal'
+      className='justify-content-center align-items-center'
+      style={{
+        height: '80vh',
+      }}
+    >
+      <Spinner animation='border' variant='primary' />;
     </Stack>
-  </Box>
+  </div>
 );
 
 export default Loader;

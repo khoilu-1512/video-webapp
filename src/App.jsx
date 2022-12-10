@@ -1,5 +1,4 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import { Box } from '@mui/material';
 
 import {
   ChannelDetail,
@@ -13,7 +12,7 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-      <Box sx={{ backgroundColor: '#000' }}>
+      <div className='bg-dark'>
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Feed />} />
@@ -21,7 +20,7 @@ function App() {
           <Route path='/channel/:id' element={<ChannelDetail />} />
           <Route path='/search/:searchTerm' element={<SearchFeed />} />
         </Routes>
-      </Box>
+      </div>
     </BrowserRouter>
   );
 }

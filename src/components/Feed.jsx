@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Stack, Typography } from '@mui/material';
+import Stack from 'react-bootstrap/Stack';
 
 import { fetchFromAPI } from '../utils/fetchFromAPI';
 import { Videos, Categories } from './';
@@ -17,40 +17,23 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { sx: 'column', md: 'row' } }}>
-      <Box
-        sx={{
-          width: '15%',
-          height: { sx: 'auto', md: '92vh' },
-          borderRight: '1px solid #3d3d3d',
-          px: { sx: 0, md: 2 },
-        }}
-      >
+    <Stack direction='horizontal'>
+      <div className='px-2 vh-100 border-right border-dark align-self-start'>
         <Categories
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
+      </div>
 
-        <Typography
-          className='copyright'
-          variant='body2'
-          sx={{ mt: 0, color: '#fff' }}
-        >
-          Copyright © 2022 React Video App
-        </Typography>
-      </Box>
-
-      <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2 }}>
-        <Typography
-          variant='h4'
-          fontWeight='bold'
-          mb={2}
-          sx={{ color: 'white' }}
-        >
-          {selectedCategory} <span style={{ color: '#FC1503' }}>videos</span>
-        </Typography>
+      <div
+        style={{ overflowY: 'auto' }}
+        className='p-2 flex-grow-2 flex-shrink-2'
+      >
+        <h4 className='mb-2 text-white text-center fw-bold'>
+          {selectedCategory} <span className='text-danger'>videos</span>
+        </h4>
         <Videos videos={videos} />
-      </Box>
+      </div>
     </Stack>
   );
 };

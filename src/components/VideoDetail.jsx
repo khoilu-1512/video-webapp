@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Stack from 'react-bootstrap/Stack';
+import { BsFillCheckCircleFill } from 'react-icons/bs';
 import ReactPlayer from 'react-player';
-import { Typography, Box, Stack } from '@mui/material';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 import { Videos, Loader } from './';
 import { fetchFromAPI } from '../utils/fetchFromAPI';
@@ -30,57 +30,56 @@ const VideoDetail = () => {
   } = videoDetail;
 
   return (
-    <Box minHeight='95vh'>
-      <Stack direction={{ xs: 'column', md: 'row' }}>
-        <Box flex={1}>
-          <Box sx={{ width: '100%', position: 'sticky', top: '86px' }}>
+    <div style={{ minHeight: '95vh' }}>
+      <div
+        className='d-flex flex-sm-column flex-md-row'
+        style={{ flex: '1 1 0%' }}
+      >
+        <div style={{ flex: 1 }} className='ps-3'>
+          <div style={{ width: '100%', position: 'sticky', top: '86px' }}>
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
               className='react-player'
               controls
             />
-            <Typography color='#fff' variant='h5' fontWeight='bold' p={2}>
-              {title}
-            </Typography>
+            <h5 className='pt-4 px-2 ps-0 text-white fw-bold'>{title}</h5>
             <Stack
-              direction='row'
-              justifyContent='space-between'
-              sx={{ color: '#fff' }}
-              py={1}
-              px={2}
+              direction='horizontal'
+              className='px-2 ps-0 py-1 text-white justify-content-between'
             >
               <Link to={`/channel/${channelId}`}>
-                <Typography
-                  variant={JSON.stringify({ sm: 'subtitle1', md: 'h6' })}
-                  color='#fff'
-                >
+                <h6 className='text-white'>
                   {channelTitle}
-                  <CheckCircleIcon
-                    sx={{ fontSize: '12px', color: 'gray', ml: '5px' }}
+
+                  <BsFillCheckCircleFill
+                    style={{
+                      fontSize: '12px',
+                      color: 'gray',
+                      marginLeft: '5px',
+                    }}
                   />
-                </Typography>
+                </h6>
               </Link>
-              <Stack direction='row' gap='20px' alignItems='center'>
-                <Typography variant='body1' sx={{ opacity: 0.7 }}>
+              <Stack
+                direction='horizontal'
+                className='align-items-center'
+                style={{ gap: '20px' }}
+              >
+                <p style={{ opacity: 0.7 }}>
                   {parseInt(viewCount).toLocaleString()} views
-                </Typography>
-                <Typography variant='body1' sx={{ opacity: 0.7 }}>
+                </p>
+                <p style={{ opacity: 0.7 }}>
                   {parseInt(likeCount).toLocaleString()} likes
-                </Typography>
+                </p>
               </Stack>
             </Stack>
-          </Box>
-        </Box>
-        <Box
-          px={2}
-          py={{ md: 1, xs: 5 }}
-          justifyContent='center'
-          alignItems='center'
-        >
-          <Videos videos={videos} direction='column' />
-        </Box>
-      </Stack>
-    </Box>
+          </div>
+        </div>
+        <div className='px-2 py-xs-5 py-md-1 align-items-center justify-content-center'>
+          <Videos videos={videos} direction='vertical' />
+        </div>
+      </div>
+    </div>
   );
 };
 

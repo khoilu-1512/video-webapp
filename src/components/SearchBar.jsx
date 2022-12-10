@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Paper, IconButton } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import { Input } from '@mui/icons-material';
+import { Button } from 'react-bootstrap';
+import { BsSearch } from 'react-icons/bs';
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  const onhandleSubmit = (e) => {
+  const handleOnSubmit = (e) => {
     e.preventDefault();
 
     if (searchTerm) {
@@ -19,29 +18,24 @@ const SearchBar = () => {
   };
 
   return (
-    <Paper
-      component='form'
-      onSubmit={onhandleSubmit}
-      sx={{
-        borderRadius: 20,
-        border: '1px solid #e3e3e3',
-        pl: 2,
-        boxShadow: 'none',
-        display: 'flex',
-        mr: 4,
-      }}
+    <form
+      onSubmit={handleOnSubmit}
+      className='d-flex shadow-none rounded-pill bg-white'
     >
       <input
-        className='search-bar'
+        className='search-bar flex-shrink-1 flex-grow-1 rounded-pill rounded-end px-4'
         placeholder='Search...'
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        style={{ flex: 1, paddingLeft: '1rem' }}
       />
-      <IconButton type='submit' sx={{ p: 1, color: 'red' }} aria-label='search'>
-        <SearchIcon />
-      </IconButton>
-    </Paper>
+      <Button
+        type='submit'
+        className='bg-white text-danger rounded-pill'
+        variant='light'
+      >
+        <BsSearch />
+      </Button>
+    </form>
   );
 };
 

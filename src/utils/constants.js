@@ -1,25 +1,23 @@
 import React from 'react';
 
-import CodeIcon from '@mui/icons-material/Code';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import { BsCodeSlash, BsMusicNote, BsCameraVideo } from 'react-icons/bs';
+import { IoIosFitness } from 'react-icons/io';
+import { IoGameController } from 'react-icons/io5';
 
 export const categories = [
-  { name: 'Coding', icon: <CodeIcon /> },
-  { name: 'Music', icon: <MusicNoteIcon /> },
-  { name: 'Movie', icon: <OndemandVideoIcon /> },
-  { name: 'Gaming', icon: <SportsEsportsIcon /> },
-  { name: 'Sport', icon: <FitnessCenterIcon /> },
+  { name: 'Coding', icon: <BsCodeSlash /> },
+  { name: 'Music', icon: <BsMusicNote /> },
+  { name: 'Movie', icon: <BsCameraVideo /> },
+  { name: 'Gaming', icon: <IoGameController /> },
+  { name: 'Sport', icon: <IoIosFitness /> },
 ];
 
-export const demoThumbnailUrl =
+export const defaultThumbNail =
   'https://i.ytimg.com/vi_webp/3PHXvlpOkf4/maxresdefault.webp';
-export const demoChannelUrl = '/channel/UC8butISFwT-Wl7EV0hUK0BQ';
-export const demoVideoUrl = '/video/3PHXvlpOkf4';
-export const demoChannelTitle = 'freeCodeCamp.org';
-export const demoVideoTitle =
+export const defaultChannelUrl = '/channel/UC8butISFwT-Wl7EV0hUK0BQ';
+export const defaultChannelTitle = 'freeCodeCamp.org';
+export const defaultVideoUrl = '/video/3PHXvlpOkf4';
+export const defaultVideoTitle =
   'Build 15 JavaScript Projects - Vanilla JavaScript Course';
-export const demoProfilePicture =
+export const defaultProfilePicture =
   'http://dergipark.org.tr/assets/app/images/buddy_sample.png';
